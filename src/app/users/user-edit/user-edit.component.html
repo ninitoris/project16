@@ -1,0 +1,108 @@
+<div class="container-fluid">
+    <form [formGroup]="userForm">
+        <div class="form-group">
+            <label for="ItemArtik">Фамилия</label>
+            <input
+              type="text"
+              class="form-control"
+              id="userSurname"
+              placeholder="Иванов"
+              formControlName="surname"
+            />
+        </div>
+
+        <div class="form-group">
+        <label for="Itemname">Имя</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userName"
+          placeholder="Иван"
+          formControlName="name"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="ItemArtik">Отчество</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userLastname"
+          placeholder="Иванович"
+          formControlName="lastname"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="ItemArtik">Возраст</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userAge"
+          placeholder="228"
+          formControlName="age"
+        />
+        <div *ngIf="(userForm.get('age')!.touched && userForm.get('age')!.invalid)">
+            <small class="text-danger">Введите корректный возраст</small>
+          </div>
+      </div>    
+
+      <div class="form-group">
+        <label for="ItemArtik">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="useremail"
+          placeholder="email@gmail.com"
+          formControlName="email"
+        />
+        <div *ngIf="(userForm.get('email')!.touched && userForm.get('email')!.invalid)">
+            <small class="text-danger">Введите корректный email</small>
+          </div>
+      </div>   
+
+      <div class="form-group">
+        <label for="ItemArtik">Телефон</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userphone"
+          placeholder="+7xxxxxxxxxx"
+          formControlName="phonenumber"
+        />
+        <div *ngIf="(userForm.get('phonenumber')!.touched && userForm.get('phonenumber')!.invalid)">
+            <small class="text-danger">Введите корректный телефон</small>
+          </div>
+      </div> 
+
+      <div class="form-group" >
+        <label for="type">Отдел</label>
+        <select class="custom-select" id="userjob"  formControlName="job">
+          <option value = "IT" >IT</option>
+          <option value= "Продажи" >Продажи</option>
+          <option value = "Доставка">Доставка</option>
+          <option value = "Юридический">Юридический</option>
+        </select>
+      
+      </div>
+
+      <div class="form-gropup">
+  
+        <button class="btn btn-primary mr-3"  [routerLink]="'/users'">
+            Вернуться
+        </button>
+
+        <button class="btn btn-success mr-3" [disabled]="userForm.invalid" (click)="onSave()" [routerLink]="'/users'">
+          Сохранить
+        </button>
+  
+        <button class="btn btn-danger"  *ngIf="user.id != null" (click)="onDelete(user)" [routerLink]="'/users'">
+          Удалить
+        </button>
+        
+
+        
+     
+    </div>
+    </form>
+  </div>

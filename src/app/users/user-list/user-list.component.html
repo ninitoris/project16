@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h4>Фильтр</h4>
+      <input 
+      type="text" 
+      class="form-control" 
+      [(ngModel)]="searchCat"
+      placeholder="Введите категорию или количество">
+    
+    </div>
+  </div> 
+  <br>
+    <table id="table">
+        <thead>
+          <tr>
+            <th scope="col-3">#</th>
+            <th scope="col-3">Имя</th>
+            <th scope="col-3">Фамилия</th>
+            <th scope="col-3">Отдел</th>
+            <th scope="col-3">Возраст</th>
+            <th scope="col-3">Телефон</th>
+            
+            <th scope = "col-3">
+                <button class="btn btn-primary btn-sm" 
+                (click)="onAddProfile()">
+                Добавить Позицию
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+            
+                <tr *ngFor="let user of users  | myfilter: searchCat">
+                <td scope="row">{{ user.id }}</td>
+                <td >{{ user.name }}</td>
+                <td>{{user.surname }}</td>
+                <td>{{user.job }}</td>
+                <td>{{user.age }}</td>
+                <td>{{user.phonenumber}} </td>
+                
+                
+                <td>
+                    <button class="btn btn-info btn-sm" style="margin: 0 10px 0 0;"
+                    (click)="onLinkProfile(user.id)">
+                      Информация
+                    </button>
+                    <button mat-button class="btn btn-danger btn-sm" 
+                    (click)="onDelete(user)">
+                      Удалить
+                    </button>
+                  </td>
+          </tr>
+            
+        </tbody>
+      </table>
+    </div>
+    

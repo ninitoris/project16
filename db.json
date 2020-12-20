@@ -1,0 +1,34 @@
+{
+  "Musers": [
+    {
+      "name": "Name1",
+      "surname": "Surname",
+      "lastname": "lastname",
+      "age": 21,
+      "email": "string@mail.ru",
+      "phonenumber": "+77897898787",
+      "job": "Доставка",
+      "id": 1
+    },
+    {
+      "name": "Станислав",
+      "surname": "Сиротинин",
+      "lastname": "Сергеевич",
+      "age": 20,
+      "email": "string@mail.ru",
+      "phonenumber": "+79102620001",
+      "job": "Продажи",
+      "id": 2
+    },
+    {
+      "name": "Петр ",
+      "surname": "Петров",
+      "lastname": "Птрович",
+      "age": "43",
+      "email": "petrov@mail.ru",
+      "phonenumber": "+79125465454",
+      "job": "IT",
+      "id": 4
+    }
+  ]
+}
